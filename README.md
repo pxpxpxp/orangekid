@@ -71,6 +71,13 @@ node test_interactions.cjs
 
 The Python check requires Pillow. The site is served from `main:/docs` with `.nojekyll`; no site build dependencies are required.
 
+## MiSTer N64 core credits
+
+- **Corn** — the unofficial 94MHz+ turbo core builds targeted by Orange Kid and used for the user’s MiSTer hardware testing.
+- **[Robert Peip (FPGAzumSpass)](https://github.com/RobertPeip)** — creator of the original MiSTer Nintendo 64 core that these builds are based on. See the **[MiSTer N64 core repository](https://github.com/MiSTer-devel/N64_MiSTer)**.
+
+Thank you to both developers, and to the MiSTer contributors and testers whose work makes this project possible.
+
 ## Redux credits
 
 Ocarina of Time Redux was started by **[Maroc](https://github.com/Maroc-rh/Ocarina-of-Time-REDUX)**, with continuation and documentation by **[ShadowOne333](https://github.com/ShadowOne333/Zelda64-Redux-Documentation)**. Orange Kid integrates selected quality-of-life additions from this work.
