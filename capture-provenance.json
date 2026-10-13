@@ -1,0 +1,20 @@
+{
+  "method": "Native raw framebuffer PNG, 640x480; no postprocessing. Message_StartTextbox opens Saria message 0x1003 in Kokiri Forest for diagnostic capture.",
+  "scene": "Kokiri Forest",
+  "message_id": "0x1003",
+  "rng_seed": "0x12345678",
+  "crop_xyxy": [
+    112,
+    104,
+    512,
+    192
+  ],
+  "display": "Nearest-neighbor CSS; native crop pixels unchanged. Desktop detail at up to 2x; full frame at up to 1x.",
+  "stock_scope": "Original dialogue texture path, bilinear sampling, drop shadow, stock character and space advances within current 640x480 build. Other UI and gameplay remain Orange Kid V1.",
+  "mister_scope": "Raw framebuffer capture does not reproduce MiSTer VI deblur circuit. Reference profile documented separately.",
+  "rom_sha256": {
+    "orange": "8754e3d8cae5266fc9250d1e1525c63cb4d6af1759d590b4bde524a7fc9eaf5a",
+    "stock": "1faab8ff843e18fcd3fb25e184f55e807461db62284fa10ed6c919bbefb22e1b"
+  },
+  "release_source_restored": true
+}

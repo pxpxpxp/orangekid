@@ -1,0 +1,29 @@
+Zelda 64 Orange Kid v1 — validation pipeline
+
+Yes: this build has a layered test pipeline, not just a boot check.
+
+Gate 1: native compilation
+Build both normal and fullscreen with the IDO MIPS toolchain. Compiler errors fail the build. The package build.sh applies the exact source/asset/audio patch chain to a fresh OoT source tree.
+
+Gate 2: code/header regression tests
+Run: bash validation/run_V1_tests.sh /absolute/path/to/patched/oot-source
+Requires GCC with 32-bit compilation support, Python 3, pyelftools and Unicorn. Eighteen freestanding i386 test suites run with 32-bit pointers and MIPS-compatible u64 alignment. Tests use actual source includes or extracted V1 function bodies; protected bodies must be refreshed when future revisions change those routines. Coverage includes framebuffer/pool selection, native viewport/rectangle mapping, depth/glow edges, pause/monochrome commands, immutable list reuse, palette ownership, room fog state, task guards, glyph alignment, name entry, D-pad, push, Lens, text control codes and legacy transition fallback. A failure exits the runner.
+
+Gate 3: actual compiled-MIPS checks
+The previous audit executes the IDO-built AA filter from linked ROM images under big-endian MIPS Unicorn, comparing original and candidate output/instruction counts. 600 calls match pixel output. This catches ABI/bitfield/compiler differences that an i386 harness alone cannot establish. These are sampled operation checks, not complete game execution or measured hardware cycle/FPS figures. Detailed evidence is retained in validation/stability12-mips-filter*.json.
+
+Gate 4: renderer pixel checks
+The monochrome fixture extracts commands by executing the compiled VisMono_Draw under MIPS Unicorn, expands the immutable list, submits its RDP commands to Angrylion, then compares the resulting framebuffer against independent expected grayscale values. Eight cases, 2457600 pixels, zero RGB mismatches. This caught the 1280-to-256 width truncation that the earlier structural test missed. Commands and evidence are bundled under validation/monochrome-fixture. The isolated renderer source and a portable run script are included.
+
+Gate 5: ROM/package validation
+validate_rom.py COMPRESSED_ROM LINKED_ROM DMA_TABLE_OFFSET
+For this layout the offset is 0x74e0; derive it from the linked map for future revisions. Verify CIC6105 checksum, all 1510 DMA records and 1456 compressed segment payloads against the linked ROM. create_bps.py performs a clean-base-to-candidate roundtrip. This checks ROM integrity, not gameplay safety.
+
+Gate 6: native emulator scenarios
+Cached-interpreter CPU, cxd4 low-level RSP, Angrylion native software RDP. Previous audit runs pause/save/resume in both variants plus Link house. This release adds forced grayscale runs in both variants, with native 640x480 captures and graphics-pool sentinel checks. Tests use copied diagnostic SRAM files, not the user's saves.
+
+Gate 7: MiSTer
+Run the release on the overclocked MiSTer core and exercise normal gameplay, pause/save/resume, pre-rendered rooms and applicable grayscale sequences. This stage remains pending for V1. Emulator tests do not prove every scene/cutscene/item path or physical hardware timing; no new hardware FPS gain is claimed.
+
+Portable renderer test: bash validation/monochrome-fixture/run_fixture.sh
+Requires GCC/G++, pthreads, Python 3, NumPy and Pillow. Bundled Angrylion source retains its license. The supplied command/palette binaries are extracted from the normal V1 build. To refresh these for another compiled build, run extract_compiled_commands.py with a folder containing game.map and linked.z64, then rerun run_fixture.sh. Extraction requires Python Unicorn. The portable fixture is rerun successfully before delivery.
