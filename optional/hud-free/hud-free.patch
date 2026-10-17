@@ -1,0 +1,116 @@
+--- a/src/code/z_parameter.c
++++ b/src/code/z_parameter.c
+@@ -3219,9 +3219,6 @@
+ }
+ 
+ void Interface_Draw(PlayState* play) {
+-    /* ORANGE_KID_HUD_FREE_TEST */
+-    return; /* Experimental: suppress the normal gameplay overlay draw path. */
+-
+     static s16 magicArrowEffectsR[] = { 255, 100, 255 };
+     static s16 magicArrowEffectsG[] = { 0, 100, 255 };
+     static s16 magicArrowEffectsB[] = { 0, 255, 100 };
+@@ -3252,6 +3249,11 @@
+     s16 svar5;
+     s16 timerId;
+ 
++    /* HUD_FREE_V05_BEGIN */
++    Gfx* hudDisplayStart;
++    s32 hideGameplayHud = !IS_PAUSED(&play->pauseCtx);
++
++    /* HUD_FREE_V05_END */
+     OPEN_DISPS(play->state.gfxCtx, "../z_parameter.c", 3405);
+ 
+     gSPSegment(OVERLAY_DISP++, 0x02, interfaceCtx->parameterSegment);
+@@ -3262,6 +3264,10 @@
+     if (pauseCtx->debugState == PAUSE_DEBUG_STATE_CLOSED) {
+         Interface_InitVertices(play);
+         func_8008A994(interfaceCtx);
++    /* HUD_FREE_V05_BEGIN */
++        /* Preserve helper side effects; rewind only their overlay commands. */
++        hudDisplayStart = OVERLAY_DISP;
++    /* HUD_FREE_V05_END */
+         Health_DrawMeter(play);
+ 
+         Gfx_SetupDL_39Overlay(play->state.gfxCtx);
+@@ -3375,6 +3381,12 @@
+         Magic_DrawMeter(play);
+         Minimap_Draw(play);
+ 
++    /* HUD_FREE_V05_BEGIN */
++        if (hideGameplayHud) {
++            OVERLAY_DISP = hudDisplayStart;
++        }
++
++    /* HUD_FREE_V05_END */
+         if ((R_PAUSE_BG_PRERENDER_STATE != PAUSE_BG_PRERENDER_PROCESS) &&
+             (R_PAUSE_BG_PRERENDER_STATE != PAUSE_BG_PRERENDER_READY)) {
+             Attention_Draw(&play->actorCtx.attention, play);
+@@ -3382,6 +3394,9 @@
+ 
+         Gfx_SetupDL_39Overlay(play->state.gfxCtx);
+ 
++    /* HUD_FREE_V05_BEGIN */
++        hudDisplayStart = OVERLAY_DISP;
++    /* HUD_FREE_V05_END */
+         Interface_DrawItemButtons(play);
+ 
+         gDPPipeSync(OVERLAY_DISP++);
+@@ -3492,6 +3507,12 @@
+ 
+         gDPPipeSync(OVERLAY_DISP++);
+ 
++    /* HUD_FREE_V05_BEGIN */
++        if (hideGameplayHud) {
++            OVERLAY_DISP = hudDisplayStart;
++        }
++
++    /* HUD_FREE_V05_END */
+         func_8008A994(interfaceCtx);
+ 
+         if ((pauseCtx->state == PAUSE_STATE_MAIN) && (pauseCtx->mainState == PAUSE_MAIN_STATE_3)) {
+@@ -3548,6 +3569,9 @@
+ 
+         Gfx_SetupDL_39Overlay(play->state.gfxCtx);
+ 
++    /* HUD_FREE_V05_BEGIN */
++        hudDisplayStart = OVERLAY_DISP;
++    /* HUD_FREE_V05_END */
+         if (!IS_PAUSED(&play->pauseCtx)) {
+             if (gSaveContext.minigameState != 1) {
+                 // Carrots rendering if the action corresponds to riding a horse
+@@ -3605,6 +3629,12 @@
+             }
+         }
+ 
++    /* HUD_FREE_V05_BEGIN */
++        if (hideGameplayHud) {
++            OVERLAY_DISP = hudDisplayStart;
++        }
++
++    /* HUD_FREE_V05_END */
+         if ((gSaveContext.subTimerState == SUBTIMER_STATE_RESPAWN) &&
+             (Message_GetState(&play->msgCtx) == TEXT_STATE_EVENT)) {
+             // Trade quest timer reached 0
+@@ -4016,6 +4046,9 @@
+                     sTimerDigits[4] -= 10;
+                 }
+ 
++    /* HUD_FREE_V05_BEGIN */
++                hudDisplayStart = OVERLAY_DISP;
++    /* HUD_FREE_V05_END */
+                 // Clock Icon
+                 gDPPipeSync(OVERLAY_DISP++);
+                 gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 255, 255, 255);
+@@ -4052,6 +4085,11 @@
+                                       ((void)0, gSaveContext.timerY[timerId]), sDigitWidths[svar1], VREG(42),
+                                       VREG(43) << 1, VREG(43) << 1);
+                 }
++    /* HUD_FREE_V05_BEGIN */
++                if (hideGameplayHud) {
++                    OVERLAY_DISP = hudDisplayStart;
++                }
++    /* HUD_FREE_V05_END */
+             }
+         }
+     }

@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-17",
+  "rom_sha256": "90e51eebc151070649aac344a79f00e33313ee04f2a0ecc023dcbaa660639a5a",
+  "core": "Mupen64Plus source build, cached interpreter, 8 MB RAM",
+  "core_commit": "ba95bab92a76744753bfe61470823a4937850ab0",
+  "video": "Angrylion Plus software rendering, raw 640x480 framebuffer captures",
+  "video_commit": "9c8b9ed3e7d7f00dff8bc872ccdd3fba1a3673fc",
+  "rsp": "CXD4 LLE",
+  "audio": "dummy; sound output not checked",
+  "input": "scripted controller",
+  "observed": [
+    "new-file creation",
+    "Kokiri Forest HUD-free gameplay",
+    "save reload",
+    "pause inventory page with HUD controls",
+    "resume returns to HUD-free gameplay"
+  ],
+  "runs": [
+    {
+      "name": "new-save-gameplay",
+      "rendered_frames": 5600,
+      "completed_normally": true,
+      "graphics_pool_canaries_checked_after_vi_1000": true,
+      "guard_failures": 0,
+      "captures": [
+        {
+          "file": "the_legend_of_zelda-000.png",
+          "sha256": "6087de85da3b9a6f1d6d19f7686a4f4ccf373e9c64723891d82c9e86295de8af"
+        },
+        {
+          "file": "the_legend_of_zelda-001.png",
+          "sha256": "af2a69d64bd4d3df9d4225d252d42973cd31f03ffc225ca555ecfcd198714a16"
+        },
+        {
+          "file": "the_legend_of_zelda-002.png",
+          "sha256": "fbf68206fec07bf7fe8e70eff72ff6c1ffd152d009078589eca33b38a6810c2f"
+        },
+        {
+          "file": "the_legend_of_zelda-003.png",
+          "sha256": "3355c772f76d53340bb26bf87c8c41021967d9ae0a2e274a0e234b4a5cdabcac"
+        },
+        {
+          "file": "the_legend_of_zelda-004.png",
+          "sha256": "539c3b454ae770c7be34cea6c1376de09485375b0a20fd4695ab65934dd5b73b"
+        },
+        {
+          "file": "the_legend_of_zelda-005.png",
+          "sha256": "14cf060fbc5509e9e9d15a07525d14420d1b6adc99266db5855c0e3944a24ee3"
+        }
+      ]
+    },
+    {
+      "name": "save-reload-pause-resume",
+      "rendered_frames": 3100,
+      "completed_normally": true,
+      "graphics_pool_canaries_checked_after_vi_1000": true,
+      "guard_failures": 0,
+      "captures": [
+        {
+          "file": "the_legend_of_zelda-000.png",
+          "sha256": "749544541341252d404968a84659f6b794a194548f38b7e1551cc6736f5e2185"
+        },
+        {
+          "file": "the_legend_of_zelda-001.png",
+          "sha256": "858fa2524989bce7b6379aab0305ca0cfa664b1aa16f259473aa939582a78857"
+        },
+        {
+          "file": "the_legend_of_zelda-002.png",
+          "sha256": "eb5e1e9f868664d668a3003321e563e2f0795214ea8eefb942ac9d479ce6a7d4"
+        },
+        {
+          "file": "the_legend_of_zelda-003.png",
+          "sha256": "61d4c14ebcbe7a562de27a9040f7c751e792b5f04fb8cce6702bc6b01a26686e"
+        }
+      ]
+    }
+  ],
+  "full_playthrough_verified": false,
+  "endgame_emulator_run": false,
+  "mister_hardware_tested": false,
+  "endgame_coverage": "host C function tests for escape timer/switch, save progression; no actual boss fights or ending played"
+}

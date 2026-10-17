@@ -1,0 +1,36 @@
+{
+  "harness": "32-bit host C function tests, graphics/audio/I/O dependencies stubbed",
+  "source_sha256": "049bdb014294a7fd22a0fa96103be42d82a52a213a99f12000db0848b4306310",
+  "full_playthrough_verified": false,
+  "mutations": {
+    "early_return": {
+      "detected": true,
+      "failure": "FAIL line 77: tag(0x4444)"
+    },
+    "frozen_timer": {
+      "detected": true,
+      "failure": "FAIL line 79: gSaveContext.timerSeconds==0"
+    },
+    "broken_trade_revert": {
+      "detected": true,
+      "failure": "FAIL line 94: gSaveContext.save.info.inventory.items[SLOT_TRADE_ADULT]==gSpoilingItemReverts[j]"
+    }
+  },
+  "functional_cases": [
+    "PASS actual save loader: 28 dungeon and 10 endgame age/scene cases; quest and dungeon flags preserved; child/adult forest return",
+    "PASS Zelda letter/song recovery and minimum-health recovery after load",
+    "PASS all 3 save slots: actual checksum writer, identical main/backup writes and reload with endgame progress",
+    "PASS HUD suppressed in gameplay; targeting retained; pause HUD retained",
+    "PASS countdown progresses and expires",
+    "PASS count-up timer advances",
+    "PASS environmental hazard expiration applies damage",
+    "PASS pause suspends timer; resume continues",
+    "PASS timers respect all 8 dialogue/game-over/transition/cutscene/minigame gates",
+    "PASS all 3 timed trade items expire, revert, restore equipped item and respawn",
+    "PASS final escape timeout/switch handling in all 4 endgame scenes",
+    "PASS main timer hands off to queued sub-timer without freezing",
+    "PASS running-man race cutoff clears event flag",
+    "PASS interface fade command retained"
+  ],
+  "passed": true
+}
