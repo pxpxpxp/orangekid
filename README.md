@@ -13,6 +13,12 @@ A native **640×480 Ocarina of Time** clarity build targeting the **MiSTer N64 9
 
 Both variants include the same text, quality-of-life, audio, and rendering changes. Fullscreen can increase graphics work by showing more of the scene.
 
+## Optional HUD-Free test build
+
+[Download HUD-Free v0.6 BPS](docs/downloads/OrangeKid_HUD_Free_Test_v0_6_US10.bps) · [Details and regression tests](optional/hud-free/README.md)
+
+Uses normal cinematic framing. Hides the gameplay HUD while retaining timer/quest processing, targeting and pause controls. Timed-event digits and action prompts are invisible. This optional test build has automated progression/save tests and emulator smoke checks; a complete playthrough and MiSTer validation are still pending. The default v1 downloads above are unchanged.
+
 ## Apply the patch
 
 1. Supply a clean, big-endian **Ocarina of Time US 1.0** ROM.
