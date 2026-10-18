@@ -1,0 +1,15 @@
+{
+  "scope": "32-bit host function test; no emulator gameplay",
+  "cases": 121,
+  "mutations": {
+    "clipped_viewport": {
+      "detected": true,
+      "failure": "FAIL 22: opa[1].words.w0==expected[0].words.w0&&opa[1].words.w1==expected[0].words.w1"
+    },
+    "drawn_bars": {
+      "detected": true,
+      "failure": "FAIL 26: opa[i].words.w0==expected[0].words.w0&&opa[i].words.w1==expected[0].words.w1"
+    }
+  },
+  "passed": true
+}

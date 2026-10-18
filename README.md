@@ -13,9 +13,9 @@ A native **640×480 Ocarina of Time** clarity build targeting the **MiSTer N64 9
 
 Both variants include the same text, quality-of-life, audio, and rendering changes. Fullscreen can increase graphics work by showing more of the scene.
 
-## Optional HUD-Free test build
+## Optional HUD-Free test builds
 
-[Download HUD-Free v0.6 BPS](docs/downloads/OrangeKid_HUD_Free_Test_v0_6_US10.bps) · [Details and regression tests](optional/hud-free/README.md)
+[Normal + HUD-Free v0.6 BPS](docs/downloads/OrangeKid_HUD_Free_Test_v0_6_US10.bps) · [Fullscreen + HUD-Free v0.7 BPS](docs/downloads/OrangeKid_HUD_Free_Fullscreen_Test_v0_7_US10.bps) · [Details and regression tests](optional/hud-free/README.md)
 
 Uses normal cinematic framing. Hides the gameplay HUD while retaining timer/quest processing, targeting and pause controls. Timed-event digits and action prompts are invisible. This optional test build has automated progression/save tests and emulator smoke checks; a complete playthrough and MiSTer validation are still pending. The default v1 downloads above are unchanged.
 
@@ -89,3 +89,5 @@ Thank you to both developers, and to the MiSTer contributors and testers whose w
 Ocarina of Time Redux was started by **[Maroc](https://github.com/Maroc-rh/Ocarina-of-Time-REDUX)**, with continuation and documentation by **[ShadowOne333](https://github.com/ShadowOne333/Zelda64-Redux-Documentation)**. Orange Kid integrates selected quality-of-life additions from this work.
 
 This is an unofficial fan project. Original game artwork belongs to its respective rights holders. No new license is assigned to third-party artwork or fonts.
+
+Fullscreen + HUD-Free v0.7 passes build integrity, timer/save and fullscreen-rendering regressions. Emulator, complete-playthrough and MiSTer checks for this combined variant remain pending. [About Orange Kid and credits](https://pxpxpxp.github.io/orangekid/#about).

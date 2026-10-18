@@ -1,7 +1,7 @@
 'use strict';
 const chapters=[...document.querySelectorAll('.chapter')];
 const links=[...document.querySelectorAll('nav [data-page]')];
-const titles=['The vision','Redux additions','A clearer conversation','HUD & menus','Original Hyrule','Play & sound','Targeting MiSTer','Performance & fixes','Choose your version'];
+const titles=['The vision','Redux additions','A clearer conversation','HUD & menus','Original Hyrule','Play & sound','Targeting MiSTer','Performance & fixes','Choose your version','About Orange Kid'];
 function showChapter(){
  let id=location.hash.slice(1)||'vision';let index=chapters.findIndex(el=>el.id===id);if(index<0){index=0;id='vision';}
  chapters.forEach((el,i)=>{el.hidden=i!==index;});

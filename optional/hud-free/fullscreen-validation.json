@@ -1,0 +1,12 @@
+{
+  "size": 33554432,
+  "sha256": "9887c75eaf317bfa1fae5185be085b1744af77bc762f203cd5561ccf03598020",
+  "md5": "57f54af6a890b06aee9f333a10a7588f",
+  "cic6105_crc": [
+    "0xa04125b5",
+    "0x3f842c4c"
+  ],
+  "dma_segments": 1510,
+  "compressed_segments": 1456,
+  "all_payloads_roundtrip": true
+}

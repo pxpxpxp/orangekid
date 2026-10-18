@@ -1,8 +1,8 @@
-# Optional HUD-Free v0.6 test build
+# Optional HUD-Free test builds
 
-[Download the BPS](../../docs/downloads/OrangeKid_HUD_Free_Test_v0_6_US10.bps)
+[Normal + HUD-Free v0.6 BPS](../../docs/downloads/OrangeKid_HUD_Free_Test_v0_6_US10.bps) · [Fullscreen + HUD-Free v0.7 BPS](../../docs/downloads/OrangeKid_HUD_Free_Fullscreen_Test_v0_7_US10.bps)
 
-Apply to a clean, big-endian Ocarina of Time US 1.0 ROM with MD5 `5bd1fe107bf8106b2ab6650abecd54d6`. Use 8 MB RDRAM. This is the normal-framing Orange Kid variant. Existing v1 downloads remain the defaults.
+Apply to a clean, big-endian Ocarina of Time US 1.0 ROM with MD5 `5bd1fe107bf8106b2ab6650abecd54d6`. Use 8 MB RDRAM. Choose normal framing or fullscreen framing. Existing v1 downloads remain the defaults.
 
 HUD-Free hides hearts, magic, item/action buttons, counters, minimap, horse/minigame indicators and clock digits during gameplay. **Timers still run even though their digits are hidden.** Targeting, dialogue, pause/equip graphics and interface fades are retained.
 
@@ -40,3 +40,18 @@ python optional/hud-free/tests/run_regressions.py /path/to/prepared/oot-source \
 Requires GCC capable of producing 32-bit objects. A 32-bit libc is not needed. Each run extracts the function bodies and relevant inventory/save tables from the supplied source, rather than testing a frozen hand copy. The harness uses real game headers with eight-byte alignment for 64-bit fields.
 
 `hud-free.patch` applies to the earlier Orange Kid HUD-Free v0.2 source. It is not a patch against unmodified ZeldaRET source. The full private source package includes the complete patched tree and original build workflow.
+
+## Fullscreen + HUD-Free v0.7
+
+This optional build combines the same HUD suppression with the existing fullscreen patch. Only `View_ApplyLetterbox` and `Gfx_SetupFrame` change from the v0.6 gameplay source: full viewport scissoring and full-frame clears replace visible bars. Authored letterbox state and timing continue to update.
+
+The ROM compiled successfully. CIC-6105 checksums, all 1,510 DMA payloads and a byte-identical BPS round trip passed. The current-source timer/save suite and its three mutation checks passed on this combined source. New rendering tests exercise 121 authored letterbox sizes; they check full opaque/translucent scissors, full-frame color/depth clears, absent overlay bars and unchanged letterbox state. Two mutations introducing clipping or bars are rejected.
+
+```sh
+python optional/hud-free/tests/run_fullscreen_regressions.py /path/to/fullscreen-hudfree-source \
+  --report fullscreen-results.json
+```
+
+Results: [progression/save](fullscreen-progression-results.json), [fullscreen rendering](fullscreen-render-results.json), [ROM integrity](fullscreen-validation.json), [BPS validation](fullscreen-bps-validation.json).
+
+The new fullscreen variant has **not** completed emulator, full-playthrough or MiSTer hardware testing. The normal v0.6 emulator checks above do not establish runtime validation of this combined build. It remains an optional test download.
