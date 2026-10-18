@@ -2,14 +2,14 @@
 
 A native **640×480 Ocarina of Time** clarity build targeting the **MiSTer N64 94MHz+ core**. Orange Kid combines crisp text, familiar artwork, selected Redux conveniences, and rendering fixes while keeping the original NTSC **20 FPS** target.
 
-**[Open the player’s guide](https://pxpxpxp.github.io/orangekid/)**
+**[Open the player’s guide](https://orangekid.monster/)**
 
 ## Download v1
 
 | Version | Framing | BPS patch |
 | --- | --- | --- |
-| Normal | Original cinematic and Z-targeting bars | [Download normal](https://pxpxpxp.github.io/orangekid/downloads/Zelda_64_Orange_Kid_v1.bps) |
-| Fullscreen | Removes visible cinematic and Z-targeting bars; retains cameras, projection, and timing | [Download fullscreen](https://pxpxpxp.github.io/orangekid/downloads/Zelda_64_Orange_Kid_v1_Fullscreen.bps) |
+| Normal | Original cinematic and Z-targeting bars | [Download normal](https://orangekid.monster/downloads/Zelda_64_Orange_Kid_v1.bps) |
+| Fullscreen | Removes visible cinematic and Z-targeting bars; retains cameras, projection, and timing | [Download fullscreen](https://orangekid.monster/downloads/Zelda_64_Orange_Kid_v1_Fullscreen.bps) |
 
 Both variants include the same text, quality-of-life, audio, and rendering changes. Fullscreen can increase graphics work by showing more of the scene.
 
@@ -66,7 +66,7 @@ The guide includes nine chapters, native gameplay captures, an interactive dialo
 
 ## Validation
 
-The final build passed build, checksum, DMA, BPS, and targeted regression checks described in the [test pipeline guide](https://pxpxpxp.github.io/orangekid/downloads/Test_Pipeline_v1.txt). An earlier baseline was user-tested on the MiSTer N64 94MHz+ core. A full hardware playthrough and measured MiSTer FPS comparison of the final fixes have not been established.
+The final build passed build, checksum, DMA, BPS, and targeted regression checks described in the [test pipeline guide](https://orangekid.monster/downloads/Test_Pipeline_v1.txt). An earlier baseline was user-tested on the MiSTer N64 94MHz+ core. A full hardware playthrough and measured MiSTer FPS comparison of the final fixes have not been established.
 
 For the static website:
 
@@ -90,4 +90,4 @@ Ocarina of Time Redux was started by **[Maroc](https://github.com/Maroc-rh/Ocari
 
 This is an unofficial fan project. Original game artwork belongs to its respective rights holders. No new license is assigned to third-party artwork or fonts.
 
-Fullscreen + HUD-Free v0.7 passes build integrity, timer/save and fullscreen-rendering regressions. Emulator, complete-playthrough and MiSTer checks for this combined variant remain pending. [About Orange Kid and credits](https://pxpxpxp.github.io/orangekid/#about).
+Fullscreen + HUD-Free v0.7 passes build integrity, timer/save and fullscreen-rendering regressions. Emulator, complete-playthrough and MiSTer checks for this combined variant remain pending. [About Orange Kid and credits](https://orangekid.monster/#about).
