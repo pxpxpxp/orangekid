@@ -13,6 +13,10 @@ A native **640×480 Ocarina of Time** clarity build targeting the **MiSTer N64 9
 
 Both variants include the same text, quality-of-life, audio, and rendering changes. Fullscreen can increase graphics work by showing more of the scene.
 
+## PVM 240p · Fullscreen + HUD-Free test
+
+[Download Orange Kid PVM 240p Fullscreen + HUD-Free Test 3](docs/downloads/Zelda_64_Orange_Kid_PVM_240p_Fullscreen_HUD_Free_Test3.bps). Created after 480i display issues on our PVM; this version renders at 640×240 progressive. Test 3 includes fast text, Redux shortcuts and the PVM name-entry fix. The gameplay HUD and timer digits are hidden. Targeted checks passed; the combined build still needs a hardware play test.
+
 ## Optional HUD-Free test builds
 
 [Normal + HUD-Free v0.6 BPS](docs/downloads/OrangeKid_HUD_Free_Test_v0_6_US10.bps) · [Fullscreen + HUD-Free v0.7 BPS](docs/downloads/OrangeKid_HUD_Free_Fullscreen_Test_v0_7_US10.bps) · [Details and regression tests](optional/hud-free/README.md)
@@ -32,7 +36,7 @@ Required base-ROM MD5:
 5bd1fe107bf8106b2ab6650abecd54d6
 ```
 
-The native output is **640×480 NTSC 480i, 4:3**. This repository distributes BPS patches and guide assets; game ROMs are not included.
+The LCD builds output **640×480 NTSC 480i**; the PVM test outputs **640×240 progressive**. Both use 4:3. This repository distributes BPS patches and guide assets; game ROMs are not included.
 
 ## What changes
 
