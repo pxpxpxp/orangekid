@@ -3,3 +3,8 @@
 .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:22px 0 30px}.settings-grid th{width:60%;font-size:12px}.settings-grid td{font-size:13px}@media(max-width:730px){.settings-grid{grid-template-columns:1fr;gap:10px}}
 
 .comparison{width:100%;max-width:none;aspect-ratio:400/88;margin-top:8px;border-radius:0;border-width:4px}.comparison.scene{width:100%;max-width:none;aspect-ratio:4/3}.comparison-labels{max-width:none;display:flex;justify-content:space-between;margin-top:20px;font-size:12px;font-weight:700}.capture-view{background:transparent;border:1px solid #c8d0c1;padding:7px 11px;border-radius:4px;font-size:11px;color:#45604d;cursor:pointer}.capture-view.active{background:#20432f;color:white;border-color:#20432f}.comparison img{image-rendering:pixelated}
+
+.pvm-build{display:grid;grid-template-columns:minmax(130px,240px) minmax(0,1fr);align-items:center;gap:28px;margin:28px 0;padding:24px;border:1px solid #d0d5c4;border-radius:7px;background:#f9f7ef}
+.pvm-build img{width:100%;height:auto;image-rendering:pixelated}
+.pvm-build h2{margin-top:4px}
+@media(max-width:650px){.pvm-build{grid-template-columns:1fr;gap:12px}.pvm-build img{width:min(65%,200px);justify-self:center}}
