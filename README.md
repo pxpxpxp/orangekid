@@ -1,6 +1,6 @@
 # Zelda 64: Orange Kid
 
-A native **640×480 Ocarina of Time** clarity build targeting the **MiSTer N64 94MHz+ core**. Orange Kid combines crisp text, familiar artwork, selected Redux conveniences, and rendering fixes while keeping the original NTSC **20 FPS** target.
+An unofficial **Ocarina of Time** clarity project targeting the **MiSTer N64 94MHz+ core**, with 640×480 LCD builds and a 640×240 progressive PVM test. Orange Kid combines crisp text, familiar artwork, selected Redux conveniences, and rendering fixes while keeping the original NTSC **20 FPS** target.
 
 **[Open the player’s guide](https://orangekid.monster/)**
 
@@ -66,7 +66,7 @@ Orange Kid includes a focused selection of Redux features, not the full Redux fe
 | Dithering / LOD Textures | Original |
 | Error Overlay | Off |
 
-The guide includes nine chapters, native gameplay captures, an interactive dialogue comparison, HUD and menu previews, rupee audio comparisons, and performance notes. The dialogue comparison restores original glyphs and filtering within the same 640×480 build; it is not a stock 320×240 capture. Emulator screenshots do not exactly reproduce MiSTer’s VI deblur output.
+The guide includes ten chapters, native gameplay captures, an interactive dialogue comparison, HUD and menu previews, rupee audio comparisons, and performance notes. The dialogue comparison restores original glyphs and filtering within the same 640×480 build; it is not a stock 320×240 capture. Emulator screenshots do not exactly reproduce MiSTer’s VI deblur output.
 
 ## Validation
 
