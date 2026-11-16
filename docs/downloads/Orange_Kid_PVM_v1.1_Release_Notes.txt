@@ -1,0 +1,59 @@
+Zelda 64: Orange Kid — PVM Edition v1.1
+November 16, 2026
+
+PATCH
+Zelda_64_Orange_Kid_PVM_v1.1.bps
+Apply to a clean, big-endian Ocarina of Time USA 1.0 .z64 ROM.
+Clean source MD5: 5bd1fe107bf8106b2ab6650abecd54d6
+Do not patch an earlier Orange Kid ROM. Keep it separately and back up saves.
+8 MiB / Expansion Pak is required. No ROM or MiSTer core is included.
+
+CHANGES
+- English name entry now samples the native font at exactly one texel per
+  scanline, instead of slightly stretching it through the 3D panel projection.
+  This removes the duplicated bottom scanlines reproduced in the preceding
+  PVM release, particularly visible in O, Q, S, U, V and Z.
+- All 65 keyboard cells and their selected yellow overlays use the same
+  pixel-aligned path. Typed names are aligned too. Panel animations retain
+  the original animated drawing path.
+- A one-pixel adjustment opens S's lower bowl in the file-name font.
+  U's font artwork is unchanged; its duplicated bottom row was a sampling
+  defect. The dialogue atlas and all other letter artwork are unchanged.
+
+RETAINED FROM THE PREVIOUS PVM RELEASE
+640x240 progressive video, fullscreen cinematics/Z-targeting, hidden gameplay
+HUD, fast text, Redux D-pad shortcuts, faster block pushing, opening skip,
+Orange Kid artwork/font/audio changes, and the Walt Jr dedication.
+This updates the existing fullscreen + HUD-free PVM option, not the separate
+high-resolution or native-320 options. Existing releases remain unchanged.
+
+VALIDATION
+- Reconstructed the previous PVM Test3 ROM byte-for-byte before editing.
+- Built with the native MIPS toolchain; CIC6105 checksum passed.
+- All 1510 DMA entries validated, including 1456 compressed payloads checked
+  byte-identically against the linked image.
+- BPS independently applied with all three CRCs and byte-identical output.
+- Cold software-RDP/LLE emulator run: 7145 rendered frames. All 65 keyboard
+  positions selected, 4225 glyph comparisons match expected source pixels
+  exactly, including yellow overlays. OQSUVZ typed, backspace/retype,
+  C-left/right, END/save, reopening, Kokiri Forest, pause and resume checked.
+- Separate 3720-frame run checked cancel/re-entry twice and rejection of an
+  empty name with END. All observed video output remained 640x240 progressive.
+- Address/undefined-behavior host test checked 320 font slots: only the S
+  pixel changes, non-English data unchanged, all lower glyph borders blank.
+  LeakSanitizer was unavailable under the execution environment's tracing.
+- Upstream compiler/linker warnings remain; this is not a warning-free build.
+
+LIMITS
+These are emulator and source checks, not a full-game playthrough or a new
+MiSTer/PVM hardware qualification. Please compare the name screen on your PVM.
+No changes were made to MiSTer Main, your installed files, or your saves.
+
+SOURCE
+The two source patches apply to the prior PVM Test3 reconstructed source.
+Its lineage is Orange Kid V1 standard, V1_to_H640V240.patch,
+keyboard-sampling.patch, fullscreen-cinematics.patch, hud-free.patch.
+The test scripts document the isolated validation workflow and assume the
+recovered source/emulator inputs; copyrighted game assets are not included.
+
+BPS SHA256: d34411cfedab32c553867182af27a9b7a11af131a33f60a5fc3c2c0fc96ceac7

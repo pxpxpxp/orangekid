@@ -13,9 +13,13 @@ An unofficial **Ocarina of Time** clarity project targeting the **MiSTer N64 94M
 
 Both variants include the same text, quality-of-life, audio, and rendering changes. Fullscreen can increase graphics work by showing more of the scene.
 
-## PVM 240p · Fullscreen + HUD-Free test
+## PVM Edition v1.1 · Fullscreen + HUD-Free
 
-[Download Orange Kid PVM 240p Fullscreen + HUD-Free Test 3](docs/downloads/Zelda_64_Orange_Kid_PVM_240p_Fullscreen_HUD_Free_Test3.bps). Created after 480i display issues on our PVM; this version renders at 640×240 progressive. Test 3 includes fast text, Redux shortcuts and the PVM name-entry fix. The gameplay HUD and timer digits are hidden. Targeted checks passed; the combined build still needs a hardware play test.
+[Download Orange Kid PVM Edition v1.1](docs/downloads/Zelda_64_Orange_Kid_PVM_v1.1.bps). Native 640×240 progressive, fullscreen cinematics and Z-targeting, fast text and Redux shortcuts. Gameplay HUD and timer digits are hidden.
+
+Version 1.1 corrects duplicated bottom scanlines on English name-entry letters using pixel-aligned rendering, with a one-pixel S adjustment in the file-name font. All 65 selected keyboard positions and 4,225 exact glyph comparisons passed, along with ROM/BPS integrity, save/reopen, cancel/re-entry and gameplay emulator checks. New MiSTer/PVM hardware and full-game validation remain pending.
+
+[Release notes and checksums](docs/downloads/Orange_Kid_PVM_v1.1_Release_Notes.txt). [Previous PVM Test 3](docs/downloads/Zelda_64_Orange_Kid_PVM_240p_Fullscreen_HUD_Free_Test3.bps) is preserved.
 
 ## Optional HUD-Free test builds
 
